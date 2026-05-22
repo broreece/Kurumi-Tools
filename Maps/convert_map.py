@@ -5,9 +5,9 @@ from pathlib import Path
 
 
 def get_property(properties, name, default=None):
-    for prop in properties:
-        if prop["name"] == name:
-            return prop["value"]
+    for property in properties:
+        if property["name"] == name:
+            return property["value"]
     return default
 
 
