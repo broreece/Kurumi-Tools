@@ -70,11 +70,11 @@ def convert_tiled_map(input_path):
 
             actor = {
                 "ActorKey": get_property(props, "ActorKey"),
+                "ActorID": get_property(props, "ActorID", 0),
                 "XLocation": int(obj["x"] / tile_width),
                 "YLocation": int(obj["y"] / tile_height) - 1,
-                "ActorID": get_property(props, "ActorID", 0),
-                "Facing": 2,
-                "Visible": obj.get("visible", True)
+                "Facing": get_property(props, "Facing", 2),
+                "Visible": get_property(props, "Visible", True)
             }
 
             runtime_map["Actors"].append(actor)
