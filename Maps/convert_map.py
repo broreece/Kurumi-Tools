@@ -37,6 +37,9 @@ def convert_tiled_map(input_path):
         if layer["type"] == "tilelayer"
     ]
 
+    starting_animated_gid = get_property(tiled["properties"], "StartingAnimatedGID")
+    starting_animated_index = get_property(tiled["properties"], "StartingAnimatedTileIndex")
+
     for y in range(height):
         for x in range(width):
 
@@ -46,6 +49,9 @@ def convert_tiled_map(input_path):
 
             for layer in tile_layers:
                 gid = layer["data"][index]
+
+                if gid >= starting_animated_gid:
+                    gid = starting_animated_index + (gid - starting_animated_gid)
 
                 if gid != 0:
                     objects.append(gid)
