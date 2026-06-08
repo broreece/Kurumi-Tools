@@ -1,0 +1,41 @@
+[
+    {
+        "color": "#ffa40b0b",
+        "drawFill": true,
+        "id": 1,
+        "members": [
+            {
+                "name": "ActorID",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "name": "ActorKey",
+                "type": "string",
+                "value": ""
+            },
+            {
+                "name": "Facing",
+                "type": "int",
+                "value": 2
+            },
+            {
+                "name": "Passable",
+                "type": "bool",
+                "value": false
+            },
+            {
+                "name": "Visible",
+                "type": "bool",
+                "value": true
+            }
+        ],
+        "name": "Actor",
+        "type": "class",
+        "useAs": [
+            "property",
+            "object",
+            "project"
+        ]
+    }
+]

@@ -24,6 +24,7 @@ def convert_tiled_map(input_path):
         "MachineName": get_property(tiled["properties"], "MachineName"),
         "Name": get_property(tiled["properties"], "Name"),
         "TileSheetName": get_property(tiled["properties"], "TileSheetName"),
+        "AnimatedTileSheetName": get_property(tiled["properties"], "AnimatedTileSheetName"),
         "BackgroundArtName": get_property(tiled["properties"], "BackgroundArtName"),
         "Width": width,
         "Height": height,
@@ -74,7 +75,8 @@ def convert_tiled_map(input_path):
                 "XLocation": int(obj["x"] / tile_width),
                 "YLocation": int(obj["y"] / tile_height) - 1,
                 "Facing": get_property(props, "Facing", 2),
-                "Visible": get_property(props, "Visible", True)
+                "Visible": get_property(props, "Visible", True),
+                "Passable": get_property(props, "Passable", False)
             }
 
             runtime_map["Actors"].append(actor)
